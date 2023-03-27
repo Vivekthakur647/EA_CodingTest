@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C921339429D1486100A77E4F /* FestsVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921339329D1486100A77E4F /* FestsVC+Extension.swift */; };
-		C921339729D14CFA00A77E4F /* EA_OutPutRec.mov in Resources */ = {isa = PBXBuildFile; fileRef = C921339529D14CFA00A77E4F /* EA_OutPutRec.mov */; };
 		C921339829D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png in Resources */ = {isa = PBXBuildFile; fileRef = C921339629D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png */; };
 		C97A1A0929CD75CF0036B3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1A0829CD75CF0036B3F1 /* AppDelegate.swift */; };
 		C97A1A0B29CD75CF0036B3F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1A0A29CD75CF0036B3F1 /* SceneDelegate.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		C921339329D1486100A77E4F /* FestsVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FestsVC+Extension.swift"; sourceTree = "<group>"; };
-		C921339529D14CFA00A77E4F /* EA_OutPutRec.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = EA_OutPutRec.mov; sourceTree = "<group>"; };
 		C921339629D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png"; sourceTree = "<group>"; };
 		C97A1A0529CD75CF0036B3F1 /* EA_CodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EA_CodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97A1A0829CD75CF0036B3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		C97C8F2329CDDF09006A4A36 /* Outputs */ = {
 			isa = PBXGroup;
 			children = (
-				C921339529D14CFA00A77E4F /* EA_OutPutRec.mov */,
 				C921339629D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png */,
 			);
 			path = Outputs;
@@ -233,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C921339829D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png in Resources */,
-				C921339729D14CFA00A77E4F /* EA_OutPutRec.mov in Resources */,
 				C97A1A1529CD75D10036B3F1 /* LaunchScreen.storyboard in Resources */,
 				C97A1A1229CD75D10036B3F1 /* Assets.xcassets in Resources */,
 				C97A1A1029CD75CF0036B3F1 /* Main.storyboard in Resources */,
