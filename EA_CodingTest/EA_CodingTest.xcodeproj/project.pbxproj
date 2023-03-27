@@ -16,6 +16,7 @@
 		C97A1A1229CD75D10036B3F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97A1A1129CD75D10036B3F1 /* Assets.xcassets */; };
 		C97A1A1529CD75D10036B3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97A1A1329CD75D10036B3F1 /* LaunchScreen.storyboard */; };
 		C97C8F2929CFEE55006A4A36 /* AllRecordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C8F2829CFEE55006A4A36 /* AllRecordsModel.swift */; };
+		C98223AF29D1774B00E6A29D /* EA_OutPutRec.mov in Resources */ = {isa = PBXBuildFile; fileRef = C98223AE29D1774B00E6A29D /* EA_OutPutRec.mov */; };
 		C9A89D7629CD76CE002C732F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A89D7529CD76CE002C732F /* URLBuilder.swift */; };
 		C9A89D8729CD99C2002C732F /* FestivalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A89D8629CD99C2002C732F /* FestivalViewCell.swift */; };
 		C9A89D9229CDC97E002C732F /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A89D9129CDC97E002C732F /* HttpRequestHelper.swift */; };
@@ -35,6 +36,7 @@
 		C97A1A1429CD75D10036B3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C97A1A1629CD75D10036B3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C97C8F2829CFEE55006A4A36 /* AllRecordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecordsModel.swift; sourceTree = "<group>"; };
+		C98223AE29D1774B00E6A29D /* EA_OutPutRec.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = EA_OutPutRec.mov; sourceTree = "<group>"; };
 		C9A89D7529CD76CE002C732F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C9A89D8629CD99C2002C732F /* FestivalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalViewCell.swift; sourceTree = "<group>"; };
 		C9A89D9129CDC97E002C732F /* HttpRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestHelper.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		C97C8F2329CDDF09006A4A36 /* Outputs */ = {
 			isa = PBXGroup;
 			children = (
+				C98223AE29D1774B00E6A29D /* EA_OutPutRec.mov */,
 				C921339629D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png */,
 			);
 			path = Outputs;
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98223AF29D1774B00E6A29D /* EA_OutPutRec.mov in Resources */,
 				C921339829D14CFA00A77E4F /* Simulator Screen Shot - iPhone 14 Pro - 2023-03-27 at 08.55.18.png in Resources */,
 				C97A1A1529CD75D10036B3F1 /* LaunchScreen.storyboard in Resources */,
 				C97A1A1229CD75D10036B3F1 /* Assets.xcassets in Resources */,
