@@ -41,14 +41,5 @@ class FestsVC: UIViewController {
     @IBAction func refreshAction(_ sender: Any) {
         viewModel.getProcessedRecord()
     }
-    
-    // MARK: To get whole info on alert --
-    func showDetail (title : String? = "Record Info !!" , error : String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 

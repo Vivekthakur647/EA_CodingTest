@@ -16,7 +16,7 @@ enum HTTPHeaderFields {
 class HttpRequestHelper {
     func GET(url: String, params: [String: String], httpHeader: HTTPHeaderFields, complete: @escaping (Bool, Data?) -> ()) {
         guard var components = URLComponents(string: url) else {
-            print("Error: cannot create URLCompontents")
+            UtilityClass.showError(error: "Error: cannot create URLCompontents")
             return
         }
         components.queryItems = params.map { key, value in
@@ -24,7 +24,7 @@ class HttpRequestHelper {
         }
 
         guard let url = components.url else {
-            print("Error: cannot create URL")
+            UtilityClass.showError(error: "Error: cannot create URL")
             return
         }
         var request = URLRequest(url: url)
@@ -44,23 +44,23 @@ class HttpRequestHelper {
         let session = URLSession(configuration: config)
         session.dataTask(with: request) { data, response, error in
             guard error == nil else {
-                self.showError(error: "Error: problem calling GET")
+                UtilityClass.showError(error: "Error: problem calling GET")
                 complete(false, nil)
                 return
             }
             guard let data = data else {
-                self.showError(error: "Error: did not receive data")
+                UtilityClass.showError(error: "Error: did not receive data")
                 complete(false, nil)
                 return
             }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 guard let response = response as? HTTPURLResponse, response.statusCode == 429 else {
-                    self.showError(error: "Error: HTTP request failed")
+                    UtilityClass.showError(error: "Error: HTTP request failed")
                     complete(false, nil)
                     return
                 }
                 let errorMessage = String(data: data, encoding: String.Encoding.utf8)
-                self.showError(error: errorMessage ?? "")
+                UtilityClass.showError(error: errorMessage ?? "")
                 complete(false, nil)
                 return
             }
@@ -71,7 +71,7 @@ class HttpRequestHelper {
                     do {
                         _ = try JSONSerialization.jsonObject(with: jsonDataToVerify)
                     } catch {
-                        self.showError(title: "Please click on refresh", error: error.localizedDescription)
+                        UtilityClass.showError(title: "Please click on refresh", error: error.localizedDescription)
                         complete(false, nil)
                     }
                 }
@@ -79,7 +79,11 @@ class HttpRequestHelper {
             complete(true, data)
         }.resume()
     }
-    func showError (title : String? = "Alert !!" , error : String) {
+    
+}
+
+class UtilityClass {
+    class func showError (title : String? = "Alert !!" , error : String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))

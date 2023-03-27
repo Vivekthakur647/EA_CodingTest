@@ -41,7 +41,7 @@ class RecordsService: RecordsServiceProtocol {
                 let finalModel = try JSONDecoder().decode(modelType, from: socketForHostData)
                 genericModel(finalModel)
             } catch let err {
-                print(err)
+                UtilityClass.showError(error: err.localizedDescription)
             }
         } catch _ { }
     }

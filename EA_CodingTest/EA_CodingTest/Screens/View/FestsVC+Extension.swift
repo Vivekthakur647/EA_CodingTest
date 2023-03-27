@@ -33,7 +33,7 @@ extension FestsVC : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //MARK: Just to show output togather for coding test----
-        self.showDetail(error: "\nRecord = 🎙️ \(viewModel.processedRecords[indexPath.section].recordName ?? "") is going to be played by \n\nBand = 🎺 \(viewModel.processedRecords[indexPath.section].allBands?[indexPath.row] ?? "") in \(viewModel.processedRecords[indexPath.section].allFestivals?.count ?? 0) fests . \n\nFestivals  names  = 🎉 \(viewModel.processedRecords[indexPath.section].allFestivals?.joined(separator: " 🎉 and ") ?? "")")
+        UtilityClass.showError(title: "Record info ", error: "\nRecord = 🎙️ \(viewModel.processedRecords[indexPath.section].recordName ?? "") is going to be played by \n\nBand = 🎺 \(viewModel.processedRecords[indexPath.section].allBands?[indexPath.row] ?? "") in \(viewModel.processedRecords[indexPath.section].allFestivals?.count ?? 0) fests . \n\nFestivals  names  = 🎉 \(viewModel.processedRecords[indexPath.section].allFestivals?.joined(separator: " 🎉 and ") ?? "")")
     }
     
         
