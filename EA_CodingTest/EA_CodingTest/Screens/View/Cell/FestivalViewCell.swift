@@ -17,7 +17,7 @@ class FestivalViewCell: UITableViewCell {
     var bandAssociatedWithRecord : String? {
         didSet {
             self.bandTitle.textColor = bandAssociatedWithRecord?.isEmpty != nil ? .black : .red
-            self.bandTitle.text = bandAssociatedWithRecord ?? "Band name is empty "
+            self.bandTitle.text = bandAssociatedWithRecord ?? Constants.bandNameMissing
         }
     }
     var festiValsAssociatedForBand : [String]? {

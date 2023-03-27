@@ -17,7 +17,8 @@ class RecordsService: RecordsServiceProtocol {
         HttpRequestHelper().GET(url: EndPoints.festivalList.url, params: ["": ""], httpHeader: .application_json) { success, data  in
             if success {
                 do {
-                    let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                    guard let dataAvailable = data else { completion(false, nil); return }
+                    let object = try JSONSerialization.jsonObject(with: dataAvailable, options: .allowFragments)
                     if let nonFormatedDict = object as? [[String: AnyObject]] {
                         let formatedDict = self.processedRecordsHierarchy(nonFormatedDict: nonFormatedDict)
                         self.decode(modelType: [AllRecordsModel].self, fromObject: formatedDict) { records in
@@ -54,8 +55,8 @@ class RecordsService: RecordsServiceProtocol {
         dict.forEach { unformattedDictObj in
             guard let unFormatedbands = unformattedDictObj["bands"] as? [[String : Any]] else { return }
             unFormatedbands.forEach { unFormatedbandObj in
-                if let recordLable = unFormatedbandObj["recordLabel"] as? String {
-                    let modifiedRecordName = recordLable == "" ? "Record name missing" : recordLable
+                if let recordLabel = unFormatedbandObj["recordLabel"] as? String {
+                    let modifiedRecordName = recordLabel == "" ? Constants.recordNameMissing : recordLabel
                     if !recordArray.contains(modifiedRecordName) {
                         recordArray.append(modifiedRecordName)
                     }
@@ -73,19 +74,16 @@ class RecordsService: RecordsServiceProtocol {
             var singleRecordBand = [String]()
             var singleRecordFests = [String]()
             for item in nonFormatedDict {
-                if let unFormatedbands = item["bands"] as? [[String : Any]]  {
-                    for mainband in unFormatedbands {
-                        if let recodLable = mainband["recordLabel"] as? String  {
-                            let modifiedRecordName = recodLable == "" ? "Record name missing" : recodLable
-                            if modifiedRecordName == singleRecord {
-                                if let bandName = mainband["name"] as? String , !singleRecordBand.contains(bandName) {
-                                    singleRecordBand.append(bandName)
-                                }
-                                if let bandsFestName = item["name"] as? String , !singleRecordFests.contains(bandsFestName) {
-                                    singleRecordFests.append(bandsFestName)
-                                }
-                            }
-                        }
+                guard let unFormatedbands = item["bands"] as? [[String : Any]]  else { continue }
+                for mainband in unFormatedbands {
+                    guard let recodLable = mainband["recordLabel"] as? String else { continue }
+                    let modifiedRecordName = recodLable == "" ? Constants.recordNameMissing : recodLable
+                    guard modifiedRecordName == singleRecord else { continue }
+                    if let bandName = mainband["name"] as? String , !singleRecordBand.contains(bandName) {
+                        singleRecordBand.append(bandName)
+                    }
+                    if let bandsFestName = item["name"] as? String , !singleRecordFests.contains(bandsFestName) {
+                        singleRecordFests.append(bandsFestName)
                     }
                 }
             }
@@ -97,4 +95,9 @@ class RecordsService: RecordsServiceProtocol {
         }
         return processedDict
     }
+
+}
+struct Constants {
+    static let recordNameMissing = "Record name missing"
+    static let bandNameMissing = "Band name is empty"
 }

@@ -16,7 +16,7 @@ extension FestsVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.processedRecords[section].recordName ?? "Record name missing"
+        return viewModel.processedRecords[section].recordName ?? Constants.recordNameMissing
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,9 +39,9 @@ extension FestsVC : UITableViewDelegate , UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         guard let header = view as? UITableViewHeaderFooterView  else { return }
-        header.textLabel?.textColor = viewModel.processedRecords[section].recordName != "Record name missing" ? .black : .red
+        header.textLabel?.textColor = viewModel.processedRecords[section].recordName != Constants.recordNameMissing ? .black : .red
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
-        header.textLabel?.text = viewModel.processedRecords[section].recordName ?? "Record name missing"
+        header.textLabel?.text = viewModel.processedRecords[section].recordName ?? Constants.recordNameMissing
         header.transform = CGAffineTransform(translationX: 20 , y: 0)
         UIView.animate(withDuration: 0.4) { header.transform = .identity }
     }
